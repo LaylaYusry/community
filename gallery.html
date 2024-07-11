@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+<body>
+    <header class="banner">
+        <div class="navbar"> 
+            <a href="student.html">
+                <img src="PICTURE/logo1.png" class="logo" alt="Logo">
+            </a>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="kangar-perlis.html" class="dropbtn">Kangar, Perlis <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="history.html">History</a>
+                        <a href="community.html">Community</a>
+                        <a href="culture.html">Culture</a>
+                        <a href="location.html">Location</a>
+                    </div>
+                </li> 
+                <li class="dropdown">
+                    <a href="attraction.html" class="dropbtn">Attractions <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="places.html">Places</a>
+                        <a href="food.html">Food</a>
+                        <a href="LocalBusiness.html">Local Businesses</a>
+                    </div>
+                </li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li class="dropdown">
+                    <a href="events.html" class="dropbtn">Events <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="events.css">Previous Events</a>
+                        <a href="upcoming.html">Upcoming Events</a>
+                    </div>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="content">
+        <img src="PICTURE/AlwiMosque1.jpeg" alt="">
+        <img src="PICTURE/kangar.jpg" alt="">
+        <img src="PICTURE/kangar1.jpg" alt="">
+        <img src="PICTURE/thaiethnic.jpg" alt="">
+        <img src="PICTURE/perahu.jpg" alt="">
+        <img src="PICTURE/Kangar3.jpg" alt="">
+        <img src="PICTURE/kangar4.jpeg" alt="">
+        <img src="PICTURE/bukitcenderawasih.jpg" alt="">
+        <img src="PICTURE/masjidperlis.jpeg" alt="">
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 Kangar,Perlis. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractions</title>
+    <style>
+        * { 
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(PICTURE/download.jpeg);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .banner { 
+            width: 100%;
+            height: 150px; /* Adjusted height to fit the header */
+            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(PICTURE/perlisinderakayanganmalaysia.jpg);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navbar {
+            width: 85%;
+            margin: auto;
+            padding: 35px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            width: 100px;
+            cursor: pointer;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .navbar ul li {
+            position: relative;
+        }
+        .navbar ul li a, .dropbtn {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;  
+            color: white;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+            padding: 14px 16px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #060606;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #009688
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .navbar ul li::after {
+            content: '';
+            height: 3px;
+            width: 0;
+            background: #009688;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: 0.5s;
+        }
+        .navbar ul li:hover::after {
+            width: 100%;
+        }
+        .content {
+            width: 80%;
+            margin: 25px auto 0;
+            padding: 20px;
+            text-align: justify;
+            color: white;
+            border-radius: 10px;
+            flex-grow: 1;
+        }
+        .content h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .content p {
+            padding: 20px;
+            margin: 10px 0;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        .content p:first-of-type {
+            text-align: center;
+        }
+        .flip-card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .flip-card {
+            background-color: transparent;
+            width: 300px; /* Adjust the width as needed */
+            height: 200px; /* Adjust the height as needed */
+            perspective: 1000px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+        }
+        .flip-card-front {
+            background-size: cover;
+            background-position: center;
+        }
+        .flip-card-back {
+            background-color: rgba(7, 7, 7, 0.7);
+            color: rgb(253, 251, 251);
+            transform: rotateY(180deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .footer {
+            width: 100%;
+            padding: 20px 0;
+            background: #060606;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header class="banner">
+        <div class="navbar"> 
+            <a href="student.html">
+                <img src="PICTURE/logo1.png" class="logo" alt="Logo">
+            </a>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="kangar-perlis.html" class="dropbtn">Kangar, Perlis <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="history.html">History</a>
+                        <a href="community.html">Community</a>
+                        <a href="culture.html">Culture</a>
+                        <a href="location.html">Location</a>
+                    </div>
+                </li> 
+                <li class="dropdown">
+                    <a href="attraction.html" class="dropbtn">Attractions <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="attraction.html">Places</a>
+                        <a href="food.html">Food</a>
+                        <a href="LocalBusiness.html">Local Businesses</a>
+                    </div>
+                </li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li class="dropdown">
+                    <a href="events.html" class="dropbtn">Events <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="events.html">Previous Events</a>
+                        <a href="upcoming.html">Upcoming Events</a>
+                    </div>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="content"> 
+        <div class="flip-card-container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background-image: url(PICTURE/food1.jpeg);">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Mempelam harum manis, a seasonal mango fruit exclusive to Perlis, is known for its thick,
+                        sweet flesh and pleasant scent, often available for immediate consumption or juice production.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background-image: url(PICTURE/food2.jpeg);">
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Laksa Perlis, a unique laksa dish, features a higher concentration of fish, cleaner gravy,
+                            and a distinct taste compared to Laksa Kedah.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front" style="background-image: url(PICTURE/food3.jpeg);">
+                            </div>
+                            <div class="flip-card-back">
+                                <p>Emping, a traditional Perlis food, is rice flakes made from young green glutinous paddy grains, served with coconut,
+                                    sugar, and salt, and occasionally wrapped in banana leaves.</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="footer">
+                <p>&copy; 2024 Kangar, Perlis. All rights reserved.</p>
+            </footer>
+        </body>
+        </html>

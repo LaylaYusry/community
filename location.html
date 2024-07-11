@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kangar, Perlis Map</title>
+    <link rel="stylesheet" href="facilities.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 400px; /* Adjust height as needed */
+            width: 100%; /* Full width */
+        }
+    </style>
+</head>
+<style>
+     body {
+            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(PICTURE/kangar1.jpg);
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            color: #f6f3f3;
+        }
+</style>
+<body>
+    <header class="banner">
+        <div class="navbar"> 
+            <a href="student.html">
+                <img src="PICTURE/logo1.png" class="logo">
+            </a>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="kangar,perlis.html" class="dropbtn">Kangar, Perlis <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="history.html">History</a>
+                        <a href="community.html">Community</a>
+                        <a href="culture.html">Culture</a>
+                        <a href="location.html">Location</a>
+                    </div>
+                </li> 
+                <li class="dropdown">
+                    <a href="attraction.html" class="dropbtn">Attractions <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="attraction.html">Places</a>
+                        <a href="food.html">Food</a>
+                        <a href="LocalBusiness.html">Local Businesses</a>
+                    </div>
+                </li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li class="dropdown">
+                    <a href="events.html" class="dropbtn">Events <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="events.html">Previous Events</a>
+                        <a href="upcoming.html">Upcoming Events</a>
+                    </div>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </div>
+    </header>
+    <h1>Map of Kangar, Perlis</h1>
+    
+    <!-- Map container -->
+    <div id="map"></div>
+
+    <!-- Include Leaflet.js library -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize and add the map
+        var map = L.map('map').setView([6.4423, 100.1967], 15); // Centered at Kangar, Perlis, zoom level 15
+
+        // Add the OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Optionally, add a marker for Kangar, Perlis
+        L.marker([6.4423, 100.1967]).addTo(map)
+            .bindPopup('Kangar, Perlis')
+            .openPopup();
+    </script>
+    <footer class="footer">
+        &copy; 2024 Kangar,Perlis. All rights reserved.
+    </footer>
+</body>
+</html>
+
+
+
+
+

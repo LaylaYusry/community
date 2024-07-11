@@ -1,0 +1,150 @@
+* { 
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(PICTURE/kangar4.jpeg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    margin: 0; /* Added to reset default body margin */
+    padding-bottom: 50px; /* Added padding bottom to create gap */
+}
+
+.banner { 
+    height: 150px; /* Adjusted height to fit the header */
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('PICTURE/perlisinderakayanganmalaysia.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    width: 85%;
+    max-width: 1200px; /* Added max-width for responsiveness */
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    height: auto; /* Added height auto for responsive image */
+    cursor: pointer;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a, .dropbtn {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;  
+    color: white;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    padding: 14px 16px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #060606;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white; /* Changed color to white for better visibility */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #009688; /* Changed hover background color for contrast */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.content {
+    width: 60%;
+    max-width: 800px; /* Added max-width for responsive content */
+    margin: 25px auto 0;
+    padding: 20px;
+    text-align: justify;
+    color: white;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+}
+
+.content h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.footer {
+    width: 100%;
+    padding: 20px 0;
+    background: #060606;
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom: 0; /* Position footer at the bottom of the page */
+}
+

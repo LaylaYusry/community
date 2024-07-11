@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facilities</title>
+    <link rel="stylesheet" href="facilities.css">
+    <style>
+        /* Add the CSS for the slideshows */
+        body {
+            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(PICTURE/kangar1.jpg);
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            color: #f6f3f3;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            display: none; /* Hide slideshow by default */
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            display: none;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card img {
+            width: 300px; /* Adjust the width as needed */
+            height: 200px; /* Adjust the height as needed */
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+    <header class="banner">
+        <div class="navbar"> 
+            <a href="student.html">
+                <img src="PICTURE/logo1.png" class="logo">
+            </a>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="kangar,perlis.html" class="dropbtn">Kangar, Perlis <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="history.html">History</a>
+                        <a href="community.html">Community</a>
+                        <a href="culture.html">Culture</a>
+                        <a href="location.html">Location</a>
+                    </div>
+                </li> 
+                <li class="dropdown">
+                    <a href="attraction.html" class="dropbtn">Attractions <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="attraction.html">Places</a>
+                        <a href="food.html">Food</a>
+                        <a href="LocalBusiness.html">Local Businesses</a>
+                    </div>
+                </li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li class="dropdown">
+                    <a href="events.html" class="dropbtn">Events <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="events.html">Previous Events</a>
+                        <a href="upcoming.html">Upcoming Events</a>
+                    </div>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="content">
+        <section>
+            <h1 onclick="toggleSlideshow('hall-slideshow')">Kangar Municipal Council Hall</h1>
+            <div id="hall-slideshow" class="slideshow-container">
+                <div class="card">
+                    <img src="PICTURE/dewankangar1.jpg" alt="Kangar Municipal Council Hall 1">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/dewankangar2.jpg" alt="Kangar Municipal Council Hall 2">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/dewankangar3.jpg" alt="Kangar Municipal Council Hall 3">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/dewankangar4.jpg" alt="Kangar Municipal Council Hall 4">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'hall-slideshow')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'hall-slideshow')">&#10095;</a>
+            </div>
+        </section>
+
+        <section>
+            <h1 onclick="toggleSlideshow('field-slideshow')">Kangar Municipal Council Field</h1>
+            <div id="field-slideshow" class="slideshow-container">
+                <div class="card">
+                    <img src="PICTURE/KangarMunicipalCouncilField1.jpg" alt="Kangar Municipal Council Field 1">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/KangarMunicipalCouncilField2.jpg" alt="Kangar Municipal Council Field 2">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/padangkangar2.jpg" alt="Kangar Municipal Council Field 2">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'field-slideshow')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'field-slideshow')">&#10095;</a>
+            </div>
+        </section>
+
+        <section>
+            <h1 onclick="toggleSlideshow('soccer-slideshow')">Synthetic Soccer Ball Field</h1>
+            <div id="soccer-slideshow" class="slideshow-container">
+                <div class="card">
+                    <img src="PICTURE/SyntheticSoccerBallField1.jpg" alt="Synthetic Soccer Ball Field 1">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/SyntheticSoccerBallField2.jpg" alt="Synthetic Soccer Ball Field 2">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/padangkangar3.jpg" alt="Synthetic Soccer Ball Field 2">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'soccer-slideshow')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'soccer-slideshow')">&#10095;</a>
+            </div>
+        </section>
+
+        <section>
+            <h1 onclick="toggleSlideshow('library-slideshow')">Perlis State Public Library</h1>
+            <div id="library-slideshow" class="slideshow-container">
+                <div class="card">
+                    <img src="PICTURE/PerlisStatePublicLibrary.jpg" alt="Perlis State Public Library">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/libraryperlis1.jpg" alt="Perlis State Public Library">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'library-slideshow')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'library-slideshow')">&#10095;</a>
+            </div>
+        </section>
+
+        <section>
+            <h1 onclick="toggleSlideshow('Merdeka-park-slideshow')">Merdeka Park</h1>
+            <div id="Merdeka-park-slideshow" class="slideshow-container">
+                <div class="card">
+                    <img src="PICTURE/TamanMerdeka1.jpg" alt="Perlis State Public Library">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/Tamanmerdeka2.jpg" alt="Perlis State Public Library">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/tamanmerdeka3.jpg" alt="Perlis State Public Library">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/tamanmerdeka4.jpg" alt="Perlis State Public Library">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/tamanmerdeka5.jpg" alt="Perlis State Public Library">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/tamanmerdeka6.jpg" alt="Perlis State Public Library">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/tamanmerdeka7(1).jpg" alt="Perlis State Public Library">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/tamanmerdeka7.jpg" alt="Perlis State Public Library">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'Merdeka-park-slideshow')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'Merdeka-park-slideshow')">&#10095;</a>
+            </div>
+        </section>
+        <section>
+            <h1 onclick="toggleSlideshow('Hospital-slideshow')">Tuanku Fauziah Hospital, Kangar</h1>
+            <div id="Hospital-slideshow" class="slideshow-container">
+                <div class="card">
+                    <img src="PICTURE/TuankuFauziahHospitalKangar.png" alt="Perlis State Public Library">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/hospital1.jpg" alt="Perlis State Public Library">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'Hospital-slideshow-slideshow')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'Hospital-slideshow-slideshow')">&#10095;</a>
+            </div>
+        </section>
+        <section>
+            <h1 onclick="toggleSlideshow('klinik-slideshow')">Kangar health Clinic</h1>
+            <div id="klinik-slideshow" class="slideshow-container">
+                <div class="card">
+                    <img src="PICTURE/KangarhealthClinic.png" alt="Perlis State Public Library">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/klinik1.jpeg" alt="Perlis State Public Library">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'klinik-slideshow')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'klinik-slideshow')">&#10095;</a>
+            </div>
+        </section>
+        <section>
+            <h1 onclick="toggleSlideshow('Mosque-slideshow')">Alwi Mosque</h1>
+            <div id="Mosque-slideshow" class="slideshow-container">
+                <div class="card">
+                    <img src="PICTURE/AlwiMosque.png" alt="Perlis State Public Library">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/AlwiMosque1.jpeg" alt="Perlis State Public Library">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'Mosque-slideshow')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'Mosque-slideshow')">&#10095;</a>
+            </div>
+        </section>
+        <section>
+            <h1 onclick="toggleSlideshow('tuanku-slideshow')">Tuanku Syed Faizuddin Putra Jamalullail Mosque</h1>
+            <div id="tuanku-slideshow" class="slideshow-container">
+                <div class="card">
+                    <img src="PICTURE/masjidperlis.jpeg" alt="Perlis State Public Library">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'tuanku-slideshow')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'tuanku-slideshow')">&#10095;</a>
+            </div>
+        </section>
+        <section>
+            <h1 onclick="toggleSlideshow('GurdwaraSahibBuilding-slideshow')"> Gurdwara Sahib Building</h1>
+            <div id="GurdwaraSahibBuilding-slideshow" class="slideshow-container">
+                <div class="card">
+                    <img src="PICTURE/GurdwaraSahibBuilding.png" alt="Perlis State Public Library">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'GurdwaraSahibBuilding-slideshow')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'GurdwaraSahibBuilding-slideshow')">&#10095;</a>
+            </div>
+        </section>
+        <section>
+            <h1 onclick="toggleSlideshow('Temple-slideshow')">Poh Aun Keong Temple</h1>
+            <div id="Temple-slideshow" class="slideshow-container">
+                <div class="card">
+                    <img src="PICTURE/tokong.jpg" alt="Perlis State Public Library">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'Temple-slideshow')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'Temple-slideshow')">&#10095;</a>
+            </div>
+        </section>
+        <section>
+            <h1 onclick="toggleSlideshow('Stadium-slideshow')">Tuanku Syed Putra Stadium, Kangar</h1>
+            <div id="Stadium-slideshow" class="slideshow-container">
+                <div class="card">
+                    <img src="PICTURE/TuankuSyedPutraStadium,Kangar.png" alt="Perlis State Public Library">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'Stadium-slideshow')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'Stadium-slideshow')">&#10095;</a>
+            </div>
+        </section>
+        <section>
+            <h1 onclick="toggleSlideshow('schools-slideshow')">Schools</h1>
+            <div id="schools-slideshow" class="slideshow-container">
+                <div class="card">
+                    <img src="PICTURE/schools.png" alt="Perlis State Public Library">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/schools1.png" alt="Perlis State Public Library">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/schools2.png" alt="Perlis State Public Library">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/schools3.png" alt="Perlis State Public Library">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'schools-slideshow')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'schools-slideshow')">&#10095;</a>
+            </div>
+        </section>
+        <section>
+            <h1 onclick="toggleSlideshow('High-slideshow')">High Institutions</h1>
+            <div id="High-slideshow" class="slideshow-container">
+                <div class="card">
+                    <img src="PICTURE/HighInstitutions.png" alt="Perlis State Public Library">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/HighInstitutions1.png" alt="Perlis State Public Library">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'High-slideshow')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'High-slideshow')">&#10095;</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleSlideshow(slideshowId) {
+            const slideshow = document.getElementById(slideshowId);
+            if (slideshow.style.display === "flex") {
+                slideshow.style.display = "none";
+            } else {
+                // Hide all other slideshows
+                const slideshows = document.querySelectorAll('.slideshow-container');
+                slideshows.forEach(sl => sl.style.display = "none");
+
+                slideshow.style.display = "flex";
+                // Reset slide index to the first image when showing the slideshow
+                resetSlides(slideshowId);
+            }
+        }
+
+        let slideIndices = {
+            'hall-slideshow': 0,
+            'field-slideshow': 0,
+            'soccer-slideshow': 0,
+            'library-slideshow': 0,
+            'Merdeka-park-slideshow': 0,
+            'Hospital-slideshow': 0,
+            'klinik-slideshow': 0,
+            'Mosque-slideshow': 0,
+            'tuanku-slideshow': 0,
+            'GurdwaraSahibBuilding-slideshow': 0,
+            'Temple-slideshow': 0,
+            'Stadium-slideshow': 0,
+            'schools-slideshow': 0,
+            'High-slideshow' : 0,
+        };
+
+        function plusSlides(n, slideshowId) {
+            slideIndices[slideshowId] += n;
+            showSlides(slideshowId);
+        }
+
+        function showSlides(slideshowId) {
+            let slides = document.querySelectorAll(`#${slideshowId} .card`);
+            if (slideIndices[slideshowId] >= slides.length) {
+                slideIndices[slideshowId] = 0;
+            }
+            if (slideIndices[slideshowId] < 0) {
+                slideIndices[slideshowId] = slides.length - 1;
+            }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndices[slideshowId]].style.display = "flex"; /* Change block to flex */
+        }
+
+        function resetSlides(slideshowId) {
+            slideIndices[slideshowId] = 0;
+            showSlides(slideshowId);
+        }
+    </script>
+
+    <footer class="footer">
+        &copy; 2024 Kangar,Perlis. All rights reserved.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <style>
+        * { 
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+                background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(PICTURE/Kangar3.jpg);
+                background-size: cover;
+                background-position: center;
+                color: white;
+            }
+        .banner { 
+            width: 100%;
+            height: 150px; /* Adjusted height to fit the header */
+            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(PICTURE/perlisinderakayanganmalaysia.jpg);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navbar {
+            width: 85%;
+            margin: auto;
+            padding: 35px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            width: 100px;
+            cursor: pointer;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .navbar ul li {
+            position: relative;
+        }
+        .navbar ul li a, .dropbtn {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;  
+            color: white;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+            padding: 14px 16px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #060606;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #009688
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .navbar ul li::after {
+            content: '';
+            height: 3px;
+            width: 0;
+            background: #009688;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: 0.5s;
+        }
+        .navbar ul li:hover::after {
+            width: 100%;
+        }
+        .content {
+            width: 60%;
+            margin: 25px auto 0;
+            padding: 20px;
+            text-align: justify;
+            color: white;
+            border-radius: 10px;
+        }
+        .content h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .content p {
+            padding: 20px;
+            margin: 10px 0;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        .content p:first-of-type {
+            text-align: center;
+            text-align: justify;
+        }
+        .footer {
+            width: 100%;
+            padding: 20px 0;
+            background: #060606;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header class="banner">
+        <div class="navbar"> 
+            <a href="student.html">
+                <img src="PICTURE/logo1.png" class="logo">
+            </a>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="kangar,perlis.html" class="dropbtn">Kangar, Perlis <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="history.html">History</a>
+                        <a href="community.html">Community</a>
+                        <a href="culture.html">Culture</a>
+                        <a href="location.html">Location</a>
+                    </div>
+                </li> 
+                <li class="dropdown">
+                    <a href="attraction.html" class="dropbtn">Attractions <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="attraction.html">Places</a>
+                        <a href="food.html">Food</a>
+                        <a href="LocalBusiness.html">Local Businesses</a>
+                    </div>
+                </li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li class="dropdown">
+                    <a href="events.html" class="dropbtn">Events <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="events.html">Previous Events</a>
+                        <a href="upcoming.html">Upcoming Events</a>
+                    </div>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="content">
+        <h1>HISTORY</h1>
+        <p>Kangar, a city with a rich history, was named after a tree known as the “Pohon Kangar”. 
+            <br>This tree, a significant part of the city's past, served as a shelter for traders. 
+            Their frequent visits to the tree led to the trading place being named “Pelabuhan Pohon Kangar”.
+            There are also other rumors that Kangar was named after an eagle called “Burung Kangor”.
+            Many eagles used to fly around this area in the earliest days of Kangar City. However, in the 20th century, “Pelabuhan Pohon Kangar” saw a decline as water transportation gave way to land transportation.
+            Yet, the city's history is a testament to the resilience and adaptability of its traders.
+            Kangar is the capital of Perlis, Malaysia's smallest and most northerly state. The origin of its name, Perlis, is shrouded in mystery and various theories.
+        </p>
+        
+        <strong><button id="toggleHistory" onclick="toggleHistory()">Continue to discover more about the history</button></strong>
+    
+        <div id="historyContent" style="display: none;">
+            <p>Historian Mohd Yusuf bin Adil, also known as Buyong Adil, traces the name "Perlis" back to a Thai phrase, “Phra Loi” (Maphrau Loi), meaning coconut washed ashore, due to the abundance of coconuts found on the shores of Kuala Perlis. 
+                Locals later shortened the phrase to “pereleh” or Perlis. Another theory attributes the name to a local tree.
+                There is another theory suggesting the name Perlis is derived from the northern Malay dialect word “perelus,” meaning foot falling into a crack, due to the muddy land ideal for rice cultivation.
+                According to another theory, the name may come from the French word “perlite,” meaning rock, referencing a large rock near Sungai Perlis. Evidence suggests a historical French connection dating back to the 1780s, during early European interest in the region.
+                French Catholic missionaries first landed at Kuala Kedah, establishing over 100 schools across Malaysia, including Convent schools like St. Nicholas in Alor Star and La Salle schools such as St. Michael in Alor Star.
+                Perlis played a significant role in the history of Kedah before becoming a British Unfederated Malay State under British colonial rule. It alternated between Siamese and Kedah rule until the Anglo-Siamese Treaty of 1909 incorporated it into British control.
+                Perlis briefly returned to Siamese control during World War II but regained independence and ultimately joined independent Malaysia in 1957.    
+            </p>
+        </div>
+    </main>
+    
+    <style>
+        #toggleHistory {
+            color: #ddd;
+            background-color: transparent; /* Make button background transparent */
+            border: none; /* Remove border for a cleaner look */
+            cursor: pointer;
+        }
+    
+        #toggleHistory:hover {
+            text-decoration: underline; /* Underline text on hover */
+        }
+    </style>
+    
+    <script>
+        function toggleHistory() {
+            var historyContent = document.getElementById("historyContent");
+            var toggleBtn = document.getElementById("toggleHistory");
+    
+            if (historyContent.style.display === "none") {
+                historyContent.style.display = "block";
+                toggleBtn.textContent = "Hide history";
+            } else {
+                historyContent.style.display = "none";
+                toggleBtn.textContent = "Continue to discover more about the history";
+            }
+        }
+    </script>
+    
+    
+    
+    <footer class="footer">
+        &copy; 2024 Kangar,Perlis. All rights reserved.
+    </footer>
+</body>
+</html>
+
+
