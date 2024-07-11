@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kangar,Perlis</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar"> 
+            <a href="student.html">
+            <img src="PICTURE/logo1.png" class="logo">
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="kangar,perlis.html" class="dropbtn">Kangar, Perlis <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="history.html">History</a>
+                        <a href="community.html">Community</a>
+                        <a href="culture.html">Culture</a>
+                        <a href="location.html">Location</a>
+                    </div>
+                </li> 
+                <li class="dropdown">
+                    <a href="attraction.html" class="dropbtn">Attractions <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="attraction.html">Places</a>
+                        <a href="food.html">Food</a>
+                        <a href="LocalBusiness.html">Local Businesses</a>
+                    </div>
+                </li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li class="dropdown">
+                    <a href="events.html" class="dropbtn">Events <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="events.html">Previous Events</a>
+                        <a href="upcoming.html">Upcoming Events</a>
+                    </div>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </div>
+        <div class="content"> 
+            <h1> KANGAR, PERLIS</h1>
+            <P> Kangar is located in Perlis, Malaysia. <br>It is situated between five territories: Sena, Kechor, Wang Bintong, Seriab, and Utan Aji. 
+                <br>Kangar serves as the administrative capital of the state of Perlis Indera Kayangan and is also known as the principal commercial capital.</P>
+                <div>
+                    <button type="button" onclick="playVideo('VIDEO/kangarvideo.mp4')"><span></span>WATCH MORE</button>
+                    <button onclick="location.href='gallery.html';"><span></span>>PHOTO</button>
+                </div>
+                
+                <script>
+                    function playVideo(videoUrl) {
+                        window.location.href = videoUrl; // Redirects to the video URL
+                    }
+                </script>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Kangar,Perlis. All rights reserved.</p>
+    </footer>
+</body>
+</html>
