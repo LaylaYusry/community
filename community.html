@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community</title>
+    <style>
+        * { 
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(PICTURE/community.jpg);
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .banner { 
+            width: 100%;
+            height: 150px;
+            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(PICTURE/perlisinderakayanganmalaysia.jpg);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navbar {
+            width: 85%;
+            margin: auto;
+            padding: 35px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            width: 100px;
+            cursor: pointer;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .navbar ul li {
+            position: relative;
+        }
+        .navbar ul li a, .dropbtn {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;  
+            color: white;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+            padding: 14px 16px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #060606;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #009688;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .navbar ul li::after {
+            content: '';
+            height: 3px;
+            width: 0;
+            background: #009688;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: 0.5s;
+        }
+        .navbar ul li:hover::after {
+            width: 100%;
+        }
+        .content {
+            width: 80%;
+            margin: 25px auto;
+            padding: 20px;
+            text-align: justify;
+            color: white;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .content h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .content p {
+            padding: 20px;
+            margin: 10px 0;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        .content p:first-of-type {
+            text-align: center;
+        }
+        .chart-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .chart-title {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .pie-chart {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: relative;
+            margin: 0 20px;
+        }
+        .pie-chart:before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            clip: rect(0, 100px, 200px, 0);
+            border-radius: 50%;
+        }
+        .slice {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            clip: rect(0, 100px, 200px, 0);
+            border-radius: 50%;
+        }
+        .slice.muslim { transform: rotate(0deg); background: #4CAF50; }
+        .slice.buddhist { transform: rotate(79.2deg); background: #2196F3; }
+        .slice.hindu { transform: rotate(90.7deg); background: #FF5722; }
+        .slice.christian { transform: rotate(103.7deg); background: #FFC107; }
+        .slice.others { transform: rotate(106.7deg); background: #9C27B0; }
+        .slice.non-religious { transform: rotate(107.9deg); background: #607D8B; }
+        .slice.taoist { transform: rotate(83.6deg); background: #009688; }
+        .chart-text {
+            margin-left: 20px;
+            text-align: left;
+            line-height: 1.6;
+        }
+        .legend {
+            margin-left: 20px;
+            text-align: left;
+        }
+        .legend div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .legend span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 3px;
+        }
+        .legend .muslim { background: #4CAF50; }
+        .legend .buddhist { background: #2196F3; }
+        .legend .hindu { background: #FF5722; }
+        .legend .christian { background: #FFC107; }
+        .legend .others { background: #9C27B0; }
+        .legend .non-religious { background: #607D8B; }
+        .legend .taoist { background: #009688; }
+        .footer {
+            width: 100%;
+            padding: 20px 0;
+            background: #060606;
+            text-align: center;
+            color: white;
+        }
+        /* Your existing CSS styles */
+        .card {
+            max-width: 300px; /* Adjust as needed */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .card-content {
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .card-content h3 {
+            margin-bottom: 10px;
+        }
+        .card-content p {
+            display: none; /* Initially hide the image */
+        }
+    </style>
+</head>
+<body>
+    <header class="banner">
+        <div class="navbar"> 
+            <a href="student.html">
+                <img src="PICTURE/logo1.png" class="logo">
+            </a>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="kangar,perlis.html" class="dropbtn">Kangar, Perlis <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="history.html">History</a>
+                        <a href="community.html">Community</a>
+                        <a href="culture.html">Culture</a>
+                        <a href="location.html">Location</a>
+                    </div>
+                </li> 
+                <li class="dropdown">
+                    <a href="attraction.html" class="dropbtn">Attractions <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="attraction.html">Places</a>
+                        <a href="food.html">Food</a>
+                        <a href="LocalBusiness.html">Local Businesses</a>
+                    </div>
+                </li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li class="dropdown">
+                    <a href="events.html" class="dropbtn">Events <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="events.html">Previous Events</a>
+                        <a href="upcoming.html">Upcoming Events</a>
+                    </div>
+                </li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="content"> 
+        <div class="chart-container">
+            <div class="chart-title">Overall Religious Demographics</div>
+            <div class="pie-chart">
+                <div class="slice muslim"></div>
+                <div class="slice buddhist"></div>
+                <div class="slice hindu"></div>
+                <div class="slice christian"></div>
+                <div class="slice others"></div>
+                <div class="slice non-religious"></div>
+            </div>
+            <div class="chart-text">
+                Muslim: 60%<br>Buddhist: 20%<br>Hindu: 5%<br>Christian: 10%<br>Others: 3%<br>Non-religious: 2%
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <div class="chart-title">Chinese population Group Demographics</div>
+            <div class="pie-chart">
+                <div class="slice buddhist" style="transform: rotate(83.6deg);"></div>
+                <div class="slice taoist" style="transform: rotate(83.6deg);"></div>
+                <div class="slice christian" style="transform: rotate(94.7deg);"></div>
+                <div class="slice others" style="transform: rotate(96.8deg);"></div>
+            </div>
+            <div class="chart-text">
+                Buddhist: 40%<br>Taoist: 30%<br>Christian: 20%<br>Others: 10%
+            </div>
+            <div class="legend">
+                <div><span class="buddhist"></span> Buddhist</div>
+                <div><span class="taoist"></span> Taoist</div>
+                <div><span class="christian"></span> Christian</div>
+                <div><span class="others"></span> Others</div>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <div class="chart-title">Indian population Demographics</div>
+            <div class="pie-chart">
+                <div class="slice hindu" style="transform: rotate(86.2deg);"></div>
+                <div class="slice christian" style="transform: rotate(92.2deg);"></div>
+                <div class="slice muslim" style="transform: rotate(96.3deg);"></div>
+                <div class="slice others" style="transform: rotate(99.7deg);"></div>
+            </div>
+            <div class="chart-text">
+                Hindu: 50%<br>Christian: 25%<br>Muslim: 15%<br>Others: 10%
+            </div>
+            <div class="legend">
+                <div><span class="hindu"></span> Hindu</div>
+                <div><span class="christian"></span> Christian</div>
+                <div><span class="muslim"></span> Muslim</div>
+                <div><span class="others"></span> Others</div>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <div class="chart-title">Mixed Religious Demographics</div>
+            <div class="pie-chart">
+                <div class="slice christian" style="transform: rotate(46.5deg);"></div>
+                <div class="slice muslim" style="transform: rotate(86.9deg);"></div>
+                <div class="slice others" style="transform: rotate(113.6deg);"></div>
+            </div>
+            <div class="chart-text">
+                Christian: 40%<br>Muslim: 35%<br>Others: 25%
+            </div>
+            <div class="legend">
+                <div><span class="christian"></span> Christian</div>
+                <div><span class="muslim"></span> Muslim</div>
+                <div><span class="others"></span> Others</div>
+            </div>
+        </div>
+    </main>
+    <div class="card">
+        <div class="card-content" onclick="toggleVisibility('image1')">
+            <h3>Masjid Tuanku Syed Faizuddin Putra Jamalullail</h3>
+            <p id="image1"> <!-- ID to target with JavaScript -->
+                <img src="PICTURE/masjidperlis.jpeg" alt="Masjid Tuanku Syed Faizuddin">
+            </p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-content" onclick="toggleVisibility('image2')">
+            <h3>Poh Aun Keong Temple</h3>
+            <p id="image2">
+                <img src="PICTURE/tokong.jpg" alt="Poh Aun Keong Temple">
+            </p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-content" onclick="toggleVisibility('image3')">
+            <h3>Maria Fatima Saint's Church</h3>
+            <p id="image3">
+                <img src="PICTURE/gereja.jpg" alt="Maria Fatima Saint's Church">
+            </p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-content" onclick="toggleVisibility('image4')">
+            <h3>Arulmigu Arumugaswami Dhevasthanam Majestic Temple</h3>
+            <p id="image4">
+                <img src="PICTURE/arulmiguarumugaswami.jpg" alt="Arulmigu Arumugaswami Dhevasthanam Majestic Temple">
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        function toggleVisibility(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "block") {
+                element.style.display = "none";
+            } else {
+                element.style.display = "block";
+            }
+        }
+    </script>
+    <footer class="footer">
+        &copy; 2024 Kangar,Perlis. All rights reserved.
+    </footer>
+    
+    </body>
+    </html>
+    
