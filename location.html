@@ -8,41 +8,97 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         #map {
-            height: 400px; /* Adjust height as needed */
+            height: 300px; /* Adjust height as needed */
             width: 100%; /* Full width */
+            max-width: 400px; /* Set a maximum width for card size */
+            margin: 0 auto; /* Center the map */
+            position: relative; /* Ensure the map is positioned correctly */
+            z-index: 0; /* Ensure the map is behind the dropdown */
         }
     </style>
 </head>
 <style>
-     body {
-            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(PICTURE/kangar1.jpg);
-            background-size: cover;
-            background-position: center;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+    body {
+        background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(PICTURE/kangar1.jpg);
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
 
-        .content {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            cursor: pointer;
-            color: #f6f3f3;
-        }
+    .content {
+        width: 90%;
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        cursor: pointer;
+        color: #f6f3f3;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        color: #fff;
+        position: relative; /* Ensure navbar is positioned correctly */
+        z-index: 10; /* Set higher z-index for the navbar */
+    }
+
+    .navbar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .navbar ul li {
+        margin: 0 10px;
+        position: relative; /* Add this to make z-index work */
+    }
+
+    .navbar ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .navbar .logo {
+        height: 50px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #080808;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 20; /* Adjust this value as needed */
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 </style>
 <body>
     <header class="banner">
-        <div class="navbar"> 
+        <div class="navbar">
             <a href="student.html">
                 <img src="PICTURE/logo1.png" class="logo">
             </a>
@@ -56,7 +112,7 @@
                         <a href="culture.html">Culture</a>
                         <a href="location.html">Location</a>
                     </div>
-                </li> 
+                </li>
                 <li class="dropdown">
                     <a href="attraction.html" class="dropbtn">Attractions <i class="fa fa-caret-down"></i></a>
                     <div class="dropdown-content">
@@ -78,9 +134,11 @@
         </div>
     </header>
     <h1>Map of Kangar, Perlis</h1>
-    
+
     <!-- Map container -->
-    <div id="map"></div>
+    <div class="content">
+        <div id="map"></div>
+    </div>
 
     <!-- Include Leaflet.js library -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -104,6 +162,8 @@
     </footer>
 </body>
 </html>
+
+
 
 
 
