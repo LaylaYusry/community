@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facilities</title>
+    <link rel="stylesheet" href="facilities.css">
+    <style>
+        body {
+            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(PICTURE/8Agb1H.png);
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            color: #f6f3f3;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            display: none; /* Hide slideshow by default */
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            display: none;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card img {
+            width: 300px; /* Adjust the width as needed */
+            height: 200px; /* Adjust the height as needed */
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+    <header class="banner">
+        <div class="navbar"> 
+            <a href="student.html">
+                <img src="PICTURE/logo1.png" class="logo">
+            </a>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="kangar,perlis.html" class="dropbtn">Kangar, Perlis <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="history.html">History</a>
+                        <a href="community.html">Community</a>
+                        <a href="culture.html">Culture</a>
+                        <a href="location.html">Location</a>
+                    </div>
+                </li> 
+                <li class="dropdown">
+                    <a href="attraction.html" class="dropbtn">Attractions <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="attraction.html">Places</a>
+                        <a href="food.html">Food</a>
+                        <a href="LocalBusiness.html">Local Businesses</a>
+                    </div>
+                </li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li class="dropdown">
+                    <a href="events.html" class="dropbtn">Events <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="events.html">Previous Events</a>
+                        <a href="upcoming.html">Upcoming Events</a>
+                    </div>
+                </li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="content">
+        <section>
+            <h1 onclick="toggleSlideshow('Liznim-slideshow')">Liznim Kraf Enterprise</h1>
+            <div id="Liznim-slideshow" class="slideshow-container">
+                <div class="card">
+                    <img src="PICTURE/localbussiness1.jpeg" alt="Liznim Kraf Enterprise 1">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/localbussiness1.0.jpeg" alt="Liznim Kraf Enterprise 2">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/localbussiness1.1.jpeg" alt="Liznim Kraf Enterprise 3">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'Liznim-slideshow')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'Liznim-slideshow')">&#10095;</a>
+            </div>
+        </section>
+
+        <section>
+            <h1 onclick="toggleSlideshow('Batik-slideshow')">Batik Inderawasih</h1>
+            <div id="Batik-slideshow" class="slideshow-container">
+                <div class="card">
+                    <img src="PICTURE/localbussiness2.jpeg" alt="Batik Inderawasih 1">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/localbussiness2.0.jpeg" alt="Batik Inderawasih 2">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/localbussiness2.1.jpeg" alt="Batik Inderawasih 3">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/localbussiness2.2.jpeg" alt="Batik Inderawasih 4">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'Batik-slideshow')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'Batik-slideshow')">&#10095;</a>
+            </div>
+        </section>
+
+        <section>
+            <h1 onclick="toggleSlideshow('Inspirasi-slideshow')">Inspirasi Kreatif Enterprise</h1>
+            <div id="Inspirasi-slideshow" class="slideshow-container">
+                <div class="card">
+                    <img src="PICTURE/localbussiness3.png" alt="Inspirasi Kreatif Enterprise 1">
+                </div>
+                <div class="card">
+                    <img src="PICTURE/localbussiness3.0.png" alt="Inspirasi Kreatif Enterprise 2">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'Inspirasi-slideshow')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'Inspirasi-slideshow')">&#10095;</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleSlideshow(slideshowId) {
+            const slideshow = document.getElementById(slideshowId);
+            if (slideshow.style.display === "flex") {
+                slideshow.style.display = "none";
+            } else {
+                // Hide all other slideshows
+                const slideshows = document.querySelectorAll('.slideshow-container');
+                slideshows.forEach(sl => sl.style.display = "none");
+
+                slideshow.style.display = "flex";
+                // Reset slide index to the first image when showing the slideshow
+                resetSlides(slideshowId);
+            }
+        }
+
+        let slideIndices = {
+            'Liznim-slideshow': 0,
+            'Batik-slideshow': 0,
+            'Inspirasi-slideshow': 0,
+        };
+
+        function plusSlides(n, slideshowId) {
+            slideIndices[slideshowId] += n;
+            showSlides(slideshowId);
+        }
+
+        function showSlides(slideshowId) {
+            let slides = document.querySelectorAll(`#${slideshowId} .card`);
+            if (slideIndices[slideshowId] >= slides.length) {
+                slideIndices[slideshowId] = 0;
+            }
+            if (slideIndices[slideshowId] < 0) {
+                slideIndices[slideshowId] = slides.length - 1;
+            }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndices[slideshowId]].style.display = "flex"; /* Change block to flex */
+        }
+
+        function resetSlides(slideshowId) {
+            slideIndices[slideshowId] = 0;
+            showSlides(slideshowId);
+        }
+    </script>
+    <footer class="footer">
+        &copy; 2024 Kangar, Perlis. All rights reserved.
+    </footer>
+
+</body>
+</html>
